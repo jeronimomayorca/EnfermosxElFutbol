@@ -1,35 +1,178 @@
 {% extends 'layout.html' %}
 
 {% block title %}
-
-Home
-
+Inicio
 {% endblock %}
 
 
 {% block content %}
 
+<div class="row">
 
-<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-    <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
-    </li>
-    <li class="nav-item" role="presentation">
-        <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" disabled>Disabled</button>
-    </li>
-</ul>
-<div class="tab-content" id="pills-tabContent">
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">...</div>
-    <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">...</div>
-    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">...</div>
-    <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">...</div>
+    <div class="col-3">
+        <label for="exampleDataList" class="form-label">Grupo</label>
+        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="¿A que grupo quieres agregarlo?">
+        <datalist id="datalistOptions">
+            <option value="Grupo A">
+            <option value="Grupo B">
+            <option value="Grupo C">
+            <option value="Grupo D">
+        </datalist>
+
+    </div>
+
+    <div class="col-9">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="complete-table" data-bs-toggle="pill" data-bs-target="#content-complete-table" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tabla Completa</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-a" data-bs-toggle="pill" data-bs-target="#content-table-group-a" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Grupo A</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-b" data-bs-toggle="pill" data-bs-target="#content-table-group-b" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Grupo B</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-c" data-bs-toggle="pill" data-bs-target="#content-table-group-c" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false">Grupo C</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-d" data-bs-toggle="pill" data-bs-target="#content-table-group-d" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Grupo D</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-e" data-bs-toggle="pill" data-bs-target="#content-table-group-e" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Grupo E</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-f" data-bs-toggle="pill" data-bs-target="#content-table-group-f" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false">Grupo F</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-g" data-bs-toggle="pill" data-bs-target="#content-table-group-g" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Grupo G</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-h" data-bs-toggle="pill" data-bs-target="#content-table-group-h" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false">Grupo H</button>
+            </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="content-complete-table" role="tabpanel" aria-labelledby="complete-table" tabindex="0"><table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Equipo</th>
+                        <th scope="col">PJ</th>
+                        <th scope="col">PG</th>
+                        <th scope="col">PE</th>
+                        <th scope="col">PP</th>
+                        <th scope="col">PUNTOS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Brasil</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Colombia</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Francia</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Alemania</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table></div>
+            <div class="tab-pane fade" id="content-table-group-a" role="tabpanel" aria-labelledby="table-group-a" tabindex="0">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Equipo</th>
+                        <th scope="col">PJ</th>
+                        <th scope="col">PG</th>
+                        <th scope="col">PE</th>
+                        <th scope="col">PP</th>
+                        <th scope="col">PUNTOS</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Brasil</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Colombia</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Francia</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Alemania</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="content-table-group-b" role="tabpanel" aria-labelledby="table-group-b" tabindex="0">tabla del grupo b</div>
+            <div class="tab-pane fade" id="content-table-group-c" role="tabpanel" aria-labelledby="table-group-c" tabindex="0">tabla del grupo c</div>
+            <div class="tab-pane fade" id="content-table-group-d" role="tabpanel" aria-labelledby="table-group-d" tabindex="0">tabla del grupo d</div>
+            <div class="tab-pane fade" id="content-table-group-e" role="tabpanel" aria-labelledby="table-group-e" tabindex="0">tabla del grupo e</div>
+            <div class="tab-pane fade" id="content-table-group-f" role="tabpanel" aria-labelledby="table-group-f" tabindex="0">tabla del grupo f</div>
+            <div class="tab-pane fade" id="content-table-group-g" role="tabpanel" aria-labelledby="table-group-g" tabindex="0">tabla del grupo g</div>
+            <div class="tab-pane fade" id="content-table-group-h" role="tabpanel" aria-labelledby="table-group-h" tabindex="0">tabla del grupo h</div>
+        </div>
+    </div>
+
 </div>
+
+
 
 
 {% endblock content %}
