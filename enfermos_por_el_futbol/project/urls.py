@@ -23,22 +23,10 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name="index"),
     path("index/", views.index, name="index"),
-    path("tablas-por-grupos/", views.tablas_por_grupos, name="tablas-por-grupos"),
-    path("about-me/", views.about_me, name="about-me"),
-    path("say-hi/", views.say_hi, name="say-hi"),
     path(
-        "create-article/<str:title>/<str:content>/<str:published>",
-        views.create_article,
-        name="create-article",
+        "tablas-de-posiciones/", views.tabla_de_posiciones, name="tablas-de-posiciones"
     ),
-    path("get-article/", views.get_article, name="get-article"),
-    path("edit-article/<int:id>", views.edit_article, name="edit-article"),
-    path("article/", views.list_article, name="list-article"),
-    path("motorcycle/", views.list_motorcycle, name="list-motorcycle"),
-    path(
-        "create-motorcycle/<str:brand>/<str:reference>/",
-        views.create_motorcycle,
-        name="create-motorcycle",
-    ),
-    path("delete-article/<int:id>", views.del_article, name="delete-article"),
+    path("llaves/", views.llaves, name="llaves"),
+    path("guardar-equipo/", views.guardar_equipo, name="guardar-equipos"),
+    path("get-equipo/", views.guardar_equipo, name="get-equipo"),
 ]

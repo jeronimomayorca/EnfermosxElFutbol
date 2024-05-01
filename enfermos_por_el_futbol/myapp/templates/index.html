@@ -1,33 +1,67 @@
-{% extends 'layout.html' %}
+{% extends './layout.html' %}
 
 {% block title %}
 Inicio
-{% endblock %}
-
+{% endblock title %}
 
 {% block content %}
-
 <div class="row">
-
     <div class="col-3">
-        <label for="exampleDataList" class="form-label">Grupo</label>
-        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="¿A que grupo quieres agregarlo?">
-        <datalist id="datalistOptions">
+        <label for="nombreEquipo" class="form-label">Nombre del Equipo</label>
+        <input class="form-control" id="nombreEquipo" type="text" placeholder="Max. 20 caracteres">
+        
+        <br>
+        
+        <label for="nombreEquipo" class="form-label">Resistencia</label>
+        <input class="form-control" id="nombreEquipo" type="text" placeholder="[0 - 100]">
+        
+        <br>
+
+        <label for="nombreEquipo" class="form-label">Fuerza</label>
+        <input class="form-control" id="nombreEquipo" type="text" placeholder="[0 - 100]">
+        
+        <br>
+
+        <label for="nombreEquipo" class="form-label">Velocidad</label>
+        <input class="form-control" id="nombreEquipo" type="text" placeholder="[0 - 100]">
+        
+        <br>
+        
+        <label for="precision" class="form-label">Precision</label>
+        <input class="form-control" list="niveles_de_precision" id="precision" placeholder="Selecciona un valor">
+        <datalist id="niveles_de_precision">
+            <option value="Alta">
+            <option value="Media">
+            <option value="Baja">
+        </datalist>
+
+        <br>
+
+        <label for="lista_de_grupos" class="form-label">Grupo</label>
+        <input class="form-control" list="group_list" id="lista_de_grupos" placeholder="¿A que grupo quieres agregarlo?">
+        <datalist id="group_list">
             <option value="Grupo A">
             <option value="Grupo B">
             <option value="Grupo C">
             <option value="Grupo D">
+            <option value="Grupo E">
+            <option value="Grupo F">
+            <option value="Grupo G">
+            <option value="Grupo H">
         </datalist>
-
     </div>
 
-    <div class="col-9">
+    <div class="col-1 align-self-center">
+        <button type="button" class="btn btn-success py-5">Ingresar</button>
+    </div>
+
+    <div class="col-8">
+
+        
+
         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="complete-table" data-bs-toggle="pill" data-bs-target="#content-complete-table" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Tabla Completa</button>
-            </li>
-            <li class="nav-item" role="presentation">
-            <button class="nav-link" id="table-group-a" data-bs-toggle="pill" data-bs-target="#content-table-group-a" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Grupo A</button>
+            <button class="nav-link active" id="table-group-a" data-bs-toggle="pill" data-bs-target="#content-table-group-a" type="button" role="tab" aria-controls="pills-profile" aria-selected="true">Grupo A</button>
             </li>
             <li class="nav-item" role="presentation">
             <button class="nav-link" id="table-group-b" data-bs-toggle="pill" data-bs-target="#content-table-group-b" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Grupo B</button>
@@ -52,127 +86,15 @@ Inicio
             </li>
         </ul>
         <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="content-complete-table" role="tabpanel" aria-labelledby="complete-table" tabindex="0"><table class="table">
-                    <thead>
-                        <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Equipo</th>
-                        <th scope="col">PJ</th>
-                        <th scope="col">PG</th>
-                        <th scope="col">PE</th>
-                        <th scope="col">PP</th>
-                        <th scope="col">PUNTOS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Brasil</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Colombia</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Francia</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Alemania</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                    </tbody>
-                </table></div>
-            <div class="tab-pane fade" id="content-table-group-a" role="tabpanel" aria-labelledby="table-group-a" tabindex="0">
-                <table class="table">
-                    <thead>
-                        <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Equipo</th>
-                        <th scope="col">PJ</th>
-                        <th scope="col">PG</th>
-                        <th scope="col">PE</th>
-                        <th scope="col">PP</th>
-                        <th scope="col">PUNTOS</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Brasil</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Colombia</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Francia</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Alemania</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                            <td>0</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="tab-pane fade" id="content-table-group-b" role="tabpanel" aria-labelledby="table-group-b" tabindex="0">tabla del grupo b</div>
-            <div class="tab-pane fade" id="content-table-group-c" role="tabpanel" aria-labelledby="table-group-c" tabindex="0">tabla del grupo c</div>
-            <div class="tab-pane fade" id="content-table-group-d" role="tabpanel" aria-labelledby="table-group-d" tabindex="0">tabla del grupo d</div>
-            <div class="tab-pane fade" id="content-table-group-e" role="tabpanel" aria-labelledby="table-group-e" tabindex="0">tabla del grupo e</div>
-            <div class="tab-pane fade" id="content-table-group-f" role="tabpanel" aria-labelledby="table-group-f" tabindex="0">tabla del grupo f</div>
-            <div class="tab-pane fade" id="content-table-group-g" role="tabpanel" aria-labelledby="table-group-g" tabindex="0">tabla del grupo g</div>
-            <div class="tab-pane fade" id="content-table-group-h" role="tabpanel" aria-labelledby="table-group-h" tabindex="0">tabla del grupo h</div>
+            <div class="tab-pane fade show active" id="content-table-group-a" role="tabpanel" aria-labelledby="table-group-a" tabindex="0">{% include "./tables/group_a.html" %}</div>
+            <div class="tab-pane fade" id="content-table-group-b" role="tabpanel" aria-labelledby="table-group-b" tabindex="1">{% include "./tables/group_b.html" %}</div>
+            <div class="tab-pane fade" id="content-table-group-c" role="tabpanel" aria-labelledby="table-group-c" tabindex="2">{% include "./tables/group_c.html" %}</div>
+            <div class="tab-pane fade" id="content-table-group-d" role="tabpanel" aria-labelledby="table-group-d" tabindex="3">{% include "./tables/group_d.html" %}</div>
+            <div class="tab-pane fade" id="content-table-group-e" role="tabpanel" aria-labelledby="table-group-e" tabindex="4">{% include "./tables/group_e.html" %}</div>
+            <div class="tab-pane fade" id="content-table-group-f" role="tabpanel" aria-labelledby="table-group-f" tabindex="5">{% include "./tables/group_f.html" %}</div>
+            <div class="tab-pane fade" id="content-table-group-g" role="tabpanel" aria-labelledby="table-group-g" tabindex="6">{% include "./tables/group_g.html" %}</div>
+            <div class="tab-pane fade" id="content-table-group-h" role="tabpanel" aria-labelledby="table-group-h" tabindex="7">{% include "./tables/group_h.html" %}</div>
         </div>
     </div>
-
 </div>
-
-
-
-
 {% endblock content %}

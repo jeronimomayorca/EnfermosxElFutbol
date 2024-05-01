@@ -1,90 +1,44 @@
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
-from myapp.models import Article, Motorcycle
+from django.shortcuts import render, HttpResponse
+from myapp.models import Equipo
 
 
 def index(request):
     return render(request, "index.html")
 
 
-def tablas_por_grupos(request):
-    return render(request, "tablas_por_grupos.html")
+def table_group_a(request):
+    return render(request, "group_a.html")
 
 
-def about_me(request):
-    qualities = ["clever", "cheerful", "analytical"]
+def tabla_de_posiciones(request):
 
-    return render(request, "about_me.html", {"qualities": qualities})
+    equipos = Equipo.objects.all()
 
-
-def say_hi(request):
-    num = 46
-    is_even = False
-
-    if num % 2 == 0:
-        is_even = True
-
-    return render(request, "say_hi.html", {"is_even": is_even, "num": num})
+    return render(request, "./tables/tabla_de_posiciones.html", {"equipos": equipos})
 
 
-def create_article(request, title, content, published):
-    article = Article(title=title, content=content, published=published)
+def llaves(request):
+    return render(request, "llaves.html")
 
-    article.save()
 
-    return HttpResponse(
-        f"Articulo creado: {article.title} - {article.content} - {article.published}"
+# saving the information in the db
+def guardar_equipo(request):
+
+    equipo = Equipo(
+        bandera=None,
+        nombre="Bolivia",
+        grupo="A",
+        puntos=0,
+        partidos_jugados=0,
+        partidos_ganados=0,
+        partidos_empatados=0,
+        partidos_perdidos=0,
+        fuerza=10,
+        resistencia=10,
+        velocidad=10,
+        precision=10,
     )
 
+    equipo.save()
 
-def get_article(request):
-    try:
-        article = Article.objects.get(
-            title="title", content="article content", published=False
-        )
-        response = f"Article title: {article.title} <br> Content: {article.content}"
-    except:
-        response = "<h1> article not found </h1>"
-    return HttpResponse(response)
-
-
-def edit_article(request, id):
-    article = Article.objects.get(pk=id)
-
-    article.title = "kasawaki"
-    article.content = "mustang"
-    article.published = True
-
-    article.save()
-
-    return HttpResponse(
-        f"Articulo {article.id} editado: {article.title} - {article.content} - {article.published}"
-    )
-
-
-def list_article(request):
-    articles = Article.objects.all()
-
-    return render(request, "articles.html", {"articles": articles})
-
-
-def create_motorcycle(request, brand, reference):
-    motorcycle = Motorcycle(brand=brand, reference=reference)
-
-    motorcycle.save()
-
-    return HttpResponse(
-        f"The motorcycle {motorcycle.brand} {motorcycle.reference} was created"
-    )
-
-
-def list_motorcycle(request):
-    motorcycles = Motorcycle.objects.all()
-
-    return render(request, "motorcycle.html", {"motorcycles": motorcycles})
-
-
-def del_article(request, id):
-    article = Article.objects.get(id=id)
-    article.delete()
-    return redirect("list-article")
+    return HttpResponse(f"Bienvenido al torneo, {equipo.nombre}!")
