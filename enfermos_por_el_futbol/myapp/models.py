@@ -13,4 +13,4 @@ class Equipo(models.Model):
     fuerza = models.IntegerField(default=0)
     resistencia = models.IntegerField(default=0)
     velocidad = models.IntegerField(default=0)
-    precision = models.IntegerField(default=0)
+    precision = models.CharField(max_length=10)

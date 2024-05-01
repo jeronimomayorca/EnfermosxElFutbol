@@ -27,6 +27,6 @@ urlpatterns = [
         "tablas-de-posiciones/", views.tabla_de_posiciones, name="tablas-de-posiciones"
     ),
     path("llaves/", views.llaves, name="llaves"),
-    path("guardar-equipo/", views.guardar_equipo, name="guardar-equipos"),
+    path("guardar-equipo/", views.guardar_equipo, name="guardar-equipo"),
     path("get-equipo/", views.guardar_equipo, name="get-equipo"),
 ]
