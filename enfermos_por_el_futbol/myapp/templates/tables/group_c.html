@@ -1,15 +1,22 @@
 <table class="table">
+  {% include "./table_header.html" %}
   <tbody>
-    
-    {% include "./table_header.html" %}
-
-    {% comment %} {% for x in range %}
-      <tr>
-        <td>{{id[x]}}</td>
-        <td>{{bookName[x]}}</td>
-        <td>{{author[x]}}</td>
-        <td>{{copies[x]}}</td>
-      </tr>
-    {% endfor %} {% endcomment %}
+      {% for equipo in equipos %}
+        {% if equipo.grupo == 'Grupo C' %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{equipo.puntos}}</td>
+          <td>{{equipo.nombre}}</td>
+          <td>{{equipo.partidos_jugados}}</td>
+          <td>{{equipo.partidos_ganados}}</td>
+          <td>{{equipo.partidos_empatados}}</td>
+          <td>{{equipo.partidos_perdidos}}</td>
+          <td>{{equipo.fuerza}}</td>
+          <td>{{equipo.resistencia}}</td>
+          <td>{{equipo.velocidad}}</td>
+          <td>{{equipo.precision}}</td>
+        </tr>
+        {% endif %}
+      {% endfor %}
   </tbody>
 </table>

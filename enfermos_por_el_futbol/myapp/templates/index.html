@@ -1,106 +1,112 @@
 {% extends './layout.html' %}
+{% load table_tags %}
+
 
 {% block title %}
 Inicio
 {% endblock title %}
 
+
 {% block content %}
 
-<form action= {% url 'guardar-equipo' %} method="POST">
-    <div class="row">
-        <div class="col-3">
-            {% csrf_token %}
-            <label for="nombre" class="form-label">Nombre del Equipo</label>
-            <input name="nombre" class="form-control" id="nombre" type="text" placeholder="Max. 20 caracteres">
-            
-            <br>
-            
-            <label for="resistencia" class="form-label">Resistencia</label>
-            <input name="resistencia" class="form-control" id="resistencia" type="text" placeholder="[0 - 100]">
-            
-            <br>
-            
-            <label for="fuerza" class="form-label">Fuerza</label>
-            <input name="fuerza" class="form-control" id="fuerza" type="text" placeholder="[0 - 100]">
-            
-            <br>
-            
-            <label for="velocidad" class="form-label">Velocidad</label>
-            <input name="velocidad" class="form-control" id="velocidad" type="text" placeholder="[0 - 100]">
-            
-            <br>
-            
-            <label for="precision" class="form-label">Precision</label>
-            <input name="precision" class="form-control" list="niveles_de_precision" id="precision" placeholder="Selecciona un valor">
-            <datalist id="niveles_de_precision">
-                <option value="Alta">
-                <option value="Media">
-                <option value="Baja">
-            </datalist>
-                        
-            <br>
-
-            <label for="grupo" class="form-label">Grupo</label>
-            <input name="grupo" class="form-control" list="group_list" id="grupo" placeholder="¿A que grupo quieres agregarlo?">
-            <datalist id="group_list">
-                <option value="Grupo A">
-                <option value="Grupo B">
-                <option value="Grupo C">
-                <option value="Grupo D">
-                <option value="Grupo E">
-                <option value="Grupo F">
-                <option value="Grupo G">
-                <option value="Grupo H">
-            </datalist>                                   
-        </div>
-
-        <div class="col-1 align-self-center">
-        <button type="submit" class="btn btn-success py-5">Ingresar</button>
-            
-    </div>
-        
-</form>
-
-        <div class="col-8">
+<div class="container pt-4">
+    <form action= {% url 'guardar-equipo' %} method="POST">
+        <div class="row">
+            <div class="col-3">
+                {% csrf_token %}
+                <label for="nombre" class="form-label">Nombre del Equipo</label>
+                <input name="nombre" class="form-control" id="nombre" type="text" placeholder="Max. 20 caracteres">
+                
+                <br>
+                
+                <label for="resistencia" class="form-label">Resistencia</label>
+                <input name="resistencia" class="form-control" id="resistencia" type="text" placeholder="[0 - 100]">
+                
+                <br>
+                
+                <label for="fuerza" class="form-label">Fuerza</label>
+                <input name="fuerza" class="form-control" id="fuerza" type="text" placeholder="[0 - 100]">
+                
+                <br>
+                
+                <label for="velocidad" class="form-label">Velocidad</label>
+                <input name="velocidad" class="form-control" id="velocidad" type="text" placeholder="[0 - 100]">
+                
+                <br>
+                
+                <label for="precision" class="form-label">Precision</label>
+                <input name="precision" class="form-control" list="niveles_de_precision" id="precision" placeholder="Selecciona un valor">
+                <datalist id="niveles_de_precision">
+                    <option value="Alta">
+                    <option value="Media">
+                    <option value="Baja">
+                </datalist>
+                            
+                <br>
     
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="table-group-a" data-bs-toggle="pill" data-bs-target="#content-table-group-a" type="button" role="tab" aria-controls="pills-profile" aria-selected="true">Grupo A</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="table-group-b" data-bs-toggle="pill" data-bs-target="#content-table-group-b" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Grupo B</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="table-group-c" data-bs-toggle="pill" data-bs-target="#content-table-group-c" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false">Grupo C</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="table-group-d" data-bs-toggle="pill" data-bs-target="#content-table-group-d" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Grupo D</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="table-group-e" data-bs-toggle="pill" data-bs-target="#content-table-group-e" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Grupo E</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="table-group-f" data-bs-toggle="pill" data-bs-target="#content-table-group-f" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false">Grupo F</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="table-group-g" data-bs-toggle="pill" data-bs-target="#content-table-group-g" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Grupo G</button>
-                </li>
-                <li class="nav-item" role="presentation">
-                <button class="nav-link" id="table-group-h" data-bs-toggle="pill" data-bs-target="#content-table-group-h" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false">Grupo H</button>
-                </li>
-            </ul>
-    
-            <div class="tab-content" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="content-table-group-a" role="tabpanel" aria-labelledby="table-group-a" tabindex="0">{% include "./tables/group_a.html" %}</div>
-                <div class="tab-pane fade" id="content-table-group-b" role="tabpanel" aria-labelledby="table-group-b" tabindex="1">{% include "./tables/group_b.html" %}</div>
-                <div class="tab-pane fade" id="content-table-group-c" role="tabpanel" aria-labelledby="table-group-c" tabindex="2">{% include "./tables/group_c.html" %}</div>
-                <div class="tab-pane fade" id="content-table-group-d" role="tabpanel" aria-labelledby="table-group-d" tabindex="3">{% include "./tables/group_d.html" %}</div>
-                <div class="tab-pane fade" id="content-table-group-e" role="tabpanel" aria-labelledby="table-group-e" tabindex="4">{% include "./tables/group_e.html" %}</div>
-                <div class="tab-pane fade" id="content-table-group-f" role="tabpanel" aria-labelledby="table-group-f" tabindex="5">{% include "./tables/group_f.html" %}</div>
-                <div class="tab-pane fade" id="content-table-group-g" role="tabpanel" aria-labelledby="table-group-g" tabindex="6">{% include "./tables/group_g.html" %}</div>
-                <div class="tab-pane fade" id="content-table-group-h" role="tabpanel" aria-labelledby="table-group-h" tabindex="7">{% include "./tables/group_h.html" %}</div>
+                <label for="grupo" class="form-label">Grupo</label>
+                <input name="grupo" class="form-control" list="group_list" id="grupo" placeholder="¿A que grupo quieres agregarlo?">
+                <datalist id="group_list">
+                    <option value="Grupo A">
+                    <option value="Grupo B">
+                    <option value="Grupo C">
+                    <option value="Grupo D">
+                    <option value="Grupo E">
+                    <option value="Grupo F">
+                    <option value="Grupo G">
+                    <option value="Grupo H">
+                </datalist>                                   
             </div>
+    
+            <div class="col-1 align-self-center">
+            <button type="submit" class="btn btn-success py-5">Ingresar</button>
+                
         </div>
+            
+    </form>
+    
+    <div class="col-8">
+    
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="table-group-a" data-bs-toggle="pill" data-bs-target="#content-table-group-a" type="button" role="tab" aria-controls="pills-profile" aria-selected="true">Grupo A</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-b" data-bs-toggle="pill" data-bs-target="#content-table-group-b" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Grupo B</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-c" data-bs-toggle="pill" data-bs-target="#content-table-group-c" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false">Grupo C</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-d" data-bs-toggle="pill" data-bs-target="#content-table-group-d" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Grupo D</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-e" data-bs-toggle="pill" data-bs-target="#content-table-group-e" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Grupo E</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-f" data-bs-toggle="pill" data-bs-target="#content-table-group-f" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false">Grupo F</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-g" data-bs-toggle="pill" data-bs-target="#content-table-group-g" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Grupo G</button>
+            </li>
+            <li class="nav-item" role="presentation">
+            <button class="nav-link" id="table-group-h" data-bs-toggle="pill" data-bs-target="#content-table-group-h" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false">Grupo H</button>
+            </li>
+        </ul>
+    
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="content-table-group-a" role="tabpanel" aria-labelledby="table-group-a" tabindex="0">{% table_group_a %}</div>
+            <div class="tab-pane fade" id="content-table-group-b" role="tabpanel" aria-labelledby="table-group-b" tabindex="1">{% table_group_b %}</div>
+            <div class="tab-pane fade" id="content-table-group-c" role="tabpanel" aria-labelledby="table-group-c" tabindex="2">{% table_group_c %}</div>
+            <div class="tab-pane fade" id="content-table-group-d" role="tabpanel" aria-labelledby="table-group-d" tabindex="3">{% table_group_d %}</div>
+            <div class="tab-pane fade" id="content-table-group-e" role="tabpanel" aria-labelledby="table-group-e" tabindex="4">{% table_group_e %}</div>
+            <div class="tab-pane fade" id="content-table-group-f" role="tabpanel" aria-labelledby="table-group-f" tabindex="5">{% table_group_f %}</div>
+            <div class="tab-pane fade" id="content-table-group-g" role="tabpanel" aria-labelledby="table-group-g" tabindex="6">{% table_group_g %}</div>
+            <div class="tab-pane fade" id="content-table-group-h" role="tabpanel" aria-labelledby="table-group-h" tabindex="7">{% table_group_h %}</div>
+        </div>
+    </div>
     
     </div>
+</div>
+
 {% endblock content %}

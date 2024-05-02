@@ -14,7 +14,7 @@
     <body>
 
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
-            <div class="container">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="{% url 'index' %}">
                     <img src="{% static 'myapp/images/logo.png' %}" alt="logo" height="80" class="rounded">
                 </a>
@@ -24,23 +24,20 @@
                             <a class="nav-link" href="{% url 'index' %}">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'llaves' %}">Llaves del torneo</a>
+                            <a class="nav-link" href="{% url 'tablas-de-posiciones' %}">Tabla de posiciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{% url 'tablas-de-posiciones' %}">Tabla de posiciones</a>
+                            <a class="nav-link" href="{% url 'llaves' %}">Llaves del torneo</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
 
-        <div class="container pt-4">
-            {% block content %}{% endblock content %}
-        </div>
-
-
+        {% block content %}{% endblock content %}
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </body>
 
 </html>
+

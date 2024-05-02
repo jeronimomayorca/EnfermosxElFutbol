@@ -29,4 +29,5 @@ urlpatterns = [
     path("llaves/", views.llaves, name="llaves"),
     path("guardar-equipo/", views.guardar_equipo, name="guardar-equipo"),
     path("get-equipo/", views.guardar_equipo, name="get-equipo"),
+    path("group-a/", views.grupo_a, name="group-a"),
 ]

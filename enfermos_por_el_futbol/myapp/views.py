@@ -6,9 +6,9 @@ def index(request):
     return render(request, "index.html")
 
 
-def table_group_a(request):
-    equipos_grupo_a = Equipo.objects.filter(grupo="Grupo A")
-    return render(request, "group_a.html", {"equipos": equipos_grupo_a})
+def grupo_a(request):
+    equipos = Equipo.objects.order_by("-puntos")
+    return render(request, "./tables/group_a.html", {"equipos": equipos})
 
 
 def tabla_de_posiciones(request):
@@ -18,6 +18,10 @@ def tabla_de_posiciones(request):
 
 def llaves(request):
     return render(request, "llaves.html")
+
+
+def equipos_grupo_a(request):
+    return
 
 
 # saving the information in the db

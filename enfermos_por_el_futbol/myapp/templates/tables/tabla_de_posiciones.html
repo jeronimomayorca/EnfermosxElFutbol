@@ -8,15 +8,15 @@ Tabla de posiciones
 {% block content %}
 
 <table class="table">
-  <tbody>
-    
-    {% include "./table_header.html" %}
 
-    
+  {% include "./complete_table_header.html" %}
+  
+  <tbody>  
     {# list all participants of the tournament #}
-    
     {% for equipo in equipos %}
       <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{equipo.puntos}}</td>
         <td>{{equipo.nombre}}</td>
         <td>{{equipo.partidos_jugados}}</td>
         <td>{{equipo.partidos_ganados}}</td>
@@ -26,11 +26,9 @@ Tabla de posiciones
         <td>{{equipo.resistencia}}</td>
         <td>{{equipo.velocidad}}</td>
         <td>{{equipo.precision}}</td>
-        <td>{{equipo.puntos}}</td>
-  
+        <td>{{equipo.grupo}}</td>
       </tr>
     {% endfor %}
-
   </tbody>
 </table>
 
