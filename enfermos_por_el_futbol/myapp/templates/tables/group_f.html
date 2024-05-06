@@ -4,7 +4,6 @@
       {% for equipo in equipos %}
         {% if equipo.grupo == 'Grupo F' %}
         <tr>
-          <td>{{ forloop.counter }}</td>
           <td>{{equipo.puntos}}</td>
           <td>{{equipo.nombre}}</td>
           <td>{{equipo.partidos_jugados}}</td>

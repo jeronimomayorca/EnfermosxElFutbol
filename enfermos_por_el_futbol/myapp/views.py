@@ -1,6 +1,9 @@
 from django.shortcuts import render, HttpResponse, redirect
 from myapp.models import Equipo
 
+# import matplotlib.pyplot as plt
+from io import BytesIO
+
 
 def index(request):
     return render(request, "index.html")
@@ -65,3 +68,19 @@ def borrar_equipo(request, name):
     equipo = Equipo.objects.get(pk=name)
     equipo.delete()
     return redirect("./tables/tabla_de_posiciones.html")
+
+
+def tournament_chart(request):
+    # Crear la figura y el eje
+    fig, ax = plt.subplots(figsize=(10, 8))
+
+    # (Agregar aquí la lógica para configurar y dibujar el gráfico...)
+
+    # Guardar el gráfico en un buffer de bytes
+    buffer = BytesIO()
+    plt.savefig(buffer, format="png")
+    plt.close(fig)  # Cerrar la figura para liberar memoria
+    buffer.seek(0)
+
+    # Crear una respuesta HTTP con la imagen PNG
+    return HttpResponse(buffer.getvalue(), content_type="image/png")

@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Equipo(models.Model):
-    bandera = models.ImageField(default="null")
     nombre = models.CharField(max_length=20)
     grupo = models.CharField(max_length=10)
     puntos = models.IntegerField(default=0)
