@@ -7,29 +7,33 @@ Tabla de posiciones
 
 {% block content %}
 
-<table class="table">
-
-  {% include "./complete_table_header.html" %}
+<div class="container">
   
-  <tbody>  
-    {# list all participants of the tournament #}
-    {% for equipo in equipos %}
-      <tr>
-        <td>{{ forloop.counter }}</td>
-        <td>{{equipo.puntos}}</td>
-        <td>{{equipo.nombre}}</td>
-        <td>{{equipo.partidos_jugados}}</td>
-        <td>{{equipo.partidos_ganados}}</td>
-        <td>{{equipo.partidos_empatados}}</td>
-        <td>{{equipo.partidos_perdidos}}</td>
-        <td>{{equipo.fuerza}}</td>
-        <td>{{equipo.resistencia}}</td>
-        <td>{{equipo.velocidad}}</td>
-        <td>{{equipo.precision}}</td>
-        <td>{{equipo.grupo}}</td>
-      </tr>
-    {% endfor %}
-  </tbody>
-</table>
+  <table class="table">
+  
+    {% include "./complete_table_header.html" %}
+    
+    <tbody>  
+      {# list all participants of the tournament #}
+      {% for equipo in equipos %}
+        <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{equipo.puntos}}</td>
+          <td>{{equipo.nombre}}</td>
+          <td>{{equipo.partidos_jugados}}</td>
+          <td>{{equipo.partidos_ganados}}</td>
+          <td>{{equipo.partidos_empatados}}</td>
+          <td>{{equipo.partidos_perdidos}}</td>
+          <td>{{equipo.fuerza}}</td>
+          <td>{{equipo.resistencia}}</td>
+          <td>{{equipo.velocidad}}</td>
+          <td>{{equipo.precision}}</td>
+          <td>{{equipo.grupo}}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  
+</div>
 
 {% endblock content %}

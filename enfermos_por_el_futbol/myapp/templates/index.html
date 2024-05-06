@@ -9,43 +9,38 @@ Inicio
 
 {% block content %}
 
-<div class="container pt-4">
+<div class="container pt-2">
     <form action= {% url 'guardar-equipo' %} method="POST">
         <div class="row">
             <div class="col-3">
                 {% csrf_token %}
                 <label for="nombre" class="form-label">Nombre del Equipo</label>
-                <input name="nombre" class="form-control" id="nombre" type="text" placeholder="Max. 20 caracteres">
-                
-                <br>
+                <input name="nombre" class="form-control mb-3" id="nombre" type="text" placeholder="Max. 20 caracteres">
+
                 
                 <label for="resistencia" class="form-label">Resistencia</label>
                 <input name="resistencia" class="form-control" id="resistencia" type="text" placeholder="[0 - 100]">
-                
-                <br>
+
                 
                 <label for="fuerza" class="form-label">Fuerza</label>
-                <input name="fuerza" class="form-control" id="fuerza" type="text" placeholder="[0 - 100]">
+                <input name="fuerza" class="form-control mb-3" id="fuerza" type="text" placeholder="[0 - 100]">
                 
-                <br>
-                
+
                 <label for="velocidad" class="form-label">Velocidad</label>
-                <input name="velocidad" class="form-control" id="velocidad" type="text" placeholder="[0 - 100]">
-                
-                <br>
+                <input name="velocidad" class="form-control mb-3" id="velocidad" type="text" placeholder="[0 - 100]">
+
                 
                 <label for="precision" class="form-label">Precision</label>
-                <input name="precision" class="form-control" list="niveles_de_precision" id="precision" placeholder="Selecciona un valor">
+                <input name="precision" class="form-control mb-3" list="niveles_de_precision" id="precision" placeholder="Selecciona un valor">
                 <datalist id="niveles_de_precision">
                     <option value="Alta">
                     <option value="Media">
                     <option value="Baja">
                 </datalist>
-                            
-                <br>
+
     
                 <label for="grupo" class="form-label">Grupo</label>
-                <input name="grupo" class="form-control" list="group_list" id="grupo" placeholder="¿A que grupo quieres agregarlo?">
+                <input name="grupo" class="form-control mb-3" list="group_list" id="grupo" placeholder="¿A que grupo quieres agregarlo?">
                 <datalist id="group_list">
                     <option value="Grupo A">
                     <option value="Grupo B">
@@ -55,21 +50,31 @@ Inicio
                     <option value="Grupo F">
                     <option value="Grupo G">
                     <option value="Grupo H">
-                </datalist>                                   
+                </datalist>         
+
+                <br>
+
+                <button type="submit" class="btn btn-primary">Ingresar</button>
             </div>
-    
-            <div class="col-1 align-self-center">
-            <button type="submit" class="btn btn-success py-5">Ingresar</button>
-                
-        </div>
             
     </form>
     
     <div class="col-8">
 
-        <div class="row">
+        <div class="row justify-content-between my-5">
             <div class="col-6">
-                
+                <label for="criterio" class="form-label">Criterio: </label>
+                <input name="criterio" class="form-control" list="criteria_list" id="criterio" placeholder="¿Como quieres simular el torneo?">
+                <datalist id="criteria_list">
+                <option value="Resistencia">
+                <option value="Fuerza">
+                <option value="Velocidad">
+                <option value="Precision">
+                </datalist> 
+            </div>
+
+            <div class="col-3 align-self-center">
+                <button type="button" class="btn btn-success">Simular torneo</button>
             </div>
         </div>
     
