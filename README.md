@@ -2,7 +2,7 @@
 
  ## ⚠️ PILAS!
  Make sure that you have these two installations completed before cloning the repository:  
- 1.https://www.git-scm.com/downloads
+ 1.https://www.git-scm.com/downloads  
  2.https://www.python.org/downloads/
 
 
