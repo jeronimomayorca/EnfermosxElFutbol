@@ -8,7 +8,5 @@
 
 ## Bloques de Código
 
-```javascript
-function saludo() {
-    console.log("Holi, Onii-chan!");
-}
+```bash
+git clone https://github.com/jeronimomayorca/EnfermosxElFutbol
